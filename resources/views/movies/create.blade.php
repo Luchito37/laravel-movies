@@ -39,6 +39,6 @@
             <input type="type" class="form-control" id="exampleFormControlInput1">
         </div>
 
-        <a class="btn btn-primary" href="">Send</a>
+        <a class="btn btn-primary" href="">Submit</a>
     </form>
 </div>
