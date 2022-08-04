@@ -1,10 +1,20 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('page_title', 'Movies List')
     
 @endsection
 
-@section('page_content')
+@section('page_content') --}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
     <table class="table">
         <thead>
             <tr>
@@ -19,22 +29,22 @@
             </tr>
         </thead>
         <tbody>
-            {{-- foreach here --}}
+            @foreach ($movies as $movie)
             <tr>
-                <td>id</td>
-                <td>title</td>
-                <td>description</td>
-                <td>thumb</td>
-                <td>director</td>
-                <td>original_language</td>
-                <td>parental_rating</td>
-                <td>release_date</td>
+                <td>{{$movie->id}}</td>
+                <td>{{$movie->title}}</td>
+                <td>{{$movie->description}}</td>
+                <td>{{$movie->thumb}}</td>
+                <td>{{$movie->director}}</td>
+                <td>{{$movie->original_language}}</td>
+                <td>{{$movie->parental_rating}}</td>
+                <td>{{$movie->release_date}}</td>
                 {{-- route for movies.show here --}}
                 <td>
                     <a class="btn btn-primary" href="">Show</a>
                     <a class="btn btn-primary" href="">Edit</a>
                     <form action="" method="POST" class="form-delete">
-		
+        
                         @csrf
                         @method('DELETE')
                 
@@ -42,6 +52,9 @@
                     </form>
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
-@endsection
+</body>
+</html>
+{{-- @endsection --}}
