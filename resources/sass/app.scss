@@ -1,2 +1,7 @@
 // Import Bootstrap
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+.my-container {
+    display: flex;
+    height: 100vh;
+}
